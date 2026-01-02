@@ -76,6 +76,16 @@ const scenes = {
             { text: "Go back", nextScene: 'start' }
         ]
     },
+    needKeycard: {
+        text: "You don't have a keycard yet. You need to find it first by exploring the room.",
+        choices: [
+            { text: "Continue exploring", nextScene: 'start' }
+        ]
+    },
+    checkKeycard: {
+        text: "Checking your inventory...",
+        choices: []
+    },
     checkKeycard: {
         text: "Checking your inventory...",
         choices: []
@@ -172,14 +182,6 @@ function winGame() {
     statusDiv.textContent = '🎉 Victory! You escaped! 🎉';
     statusDiv.className = 'success';
 }
-
-// Add missing scene
-scenes.needKeycard = {
-    text: "You don't have a keycard yet. You need to find it first by exploring the room.",
-    choices: [
-        { text: "Continue exploring", nextScene: 'start' }
-    ]
-};
 
 // Start the game when page loads
 window.onload = initGame;
